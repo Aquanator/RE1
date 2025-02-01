@@ -9,7 +9,7 @@ class character:
     
     def equip_weapon(self, weapon):
         self.weapon = weapon
-        print(f"{self} equipped {weapon}")
+        print(f"{self.name} equipped {weapon}")
 
     def take_damage(self, damage):
         self.current_health -= damage
@@ -18,8 +18,9 @@ class character:
         else:
             print(f"{self.name} has taken {damage}")
     
-    def attack(self, weapon, ):
-        return
+    def attack(self):
+        if self.weapon:
+            print(f"{self.name} fires {self.weapon}")
     
     def heal(self, amount):
         self.current_health += amount
@@ -32,7 +33,10 @@ class character:
         elif self.current_health <= 29 and self.current_health >= 15:
             self.health_state = "Extreme Caution"
         
-        elif self.current_health <= 14 and self.current_health >= 0:
+        elif self.current_health <= 14 and self.current_health >= 1:
             self.health_state = "Danger"
+        
+        else:
+            self.health_state = "Dead"
             
-        print("{self.name}: {self.health_state}")
+        print(f"{self.name}: {self.health_state}")
