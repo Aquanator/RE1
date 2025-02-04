@@ -1,4 +1,4 @@
-from Character.Jill_Valentine import JillValentine
+from Character.Playable_Character import Jill_Valentine
 import time
 
 def game_intro():
@@ -14,7 +14,7 @@ def game_intro():
 
 def main_game_loop():
     """Main game loop where player interacts with the world"""
-    player = JillValentine()  # Initialize Jill
+    player = Jill_Valentine()  # Initialize Jill
     
     while player.health_state != "Dead":
         print("\n------ What do you want to do? ------")
