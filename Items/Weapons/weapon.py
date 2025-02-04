@@ -1,7 +1,7 @@
 class weapon:
-    def __init__(Weapon, Name, Ammo_type, Rounds):
-        Weapon.Name = Name
-        Weapon.Ammo_type = Ammo_type
-        Weapon.Rounds = Rounds
+    def __init__(self, Name, Ammo_type, Capacity):
+        self.Name = Name
+        self.Ammo_type = Ammo_type
+        self.Rounds = Capacity
     
     

@@ -2,13 +2,15 @@ class Character:
     #Each character is going to have some starting equipment and also have a special item unique to them
     #The function __init__ is just intializing character attributes
     
-    def __init__(self, name, max_health, weapon,inventory, special_item):
+    def __init__(self, name, max_health, health_state, weapon, inventory, special_item):
         self.name = name
         self.max_health = max_health
         self.current_health = max_health
+        self.health_state = "Fine"
         self.weapon = weapon
         self.inventory = inventory
         self.special_item = special_item
+        
     
     def equip_weapon(self, weapon):
         self.weapon = weapon

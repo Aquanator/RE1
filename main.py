@@ -1,4 +1,4 @@
-from Character.Playable_Character import Jill_Valentine
+from Character.Playable_Character.Jill_Valentine import Jill_Valentine
 import time
 
 def game_intro():
