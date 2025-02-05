@@ -1,5 +1,14 @@
 from Character.Playable_Character.Jill_Valentine import Jill_Valentine
+from Character.character import Character
 import time
+
+# For the most part everything in terms of importing Characters and Items is done.
+# Need to start working on the main.py because it's just a mess lol.
+# After that I need to work on the inventory system as there really isn't one
+# for the inventory system I'm thinking about using a dicitionary, so that we 
+# can keep track of the items.  After that we can implement enemies to simulate comabt.
+# Finally start making the actual locations and possibly NPC's later on.
+
 
 def game_intro():
     """Displays an intro message"""
@@ -8,13 +17,14 @@ def game_intro():
     print("========================================")
     time.sleep(1)
     print("\nYou are Jill Valentine, a former S.T.A.R.S. officer trying to survive a zombie outbreak.")
-    time.sleep(1)
+    time.sleep(2)
     print("\nFind weapons, fight enemies, and escape the city alive!\n")
-    time.sleep(1)
+    time.sleep(2)
 
 def main_game_loop():
     """Main game loop where player interacts with the world"""
-    player = Jill_Valentine()  # Initialize Jill
+
+    player = Jill_Valentine() # Initialize Jill
     
     while player.health_state != "Dead":
         print("\n------ What do you want to do? ------")
@@ -28,8 +38,8 @@ def main_game_loop():
         choice = input("> ").strip()
         
         if choice == "1":
-            print(f"\n{player.name} - Health: {player.current_health}/{player.max_health} ({player.health_state})")
-            print(f"Weapon: {player.weapon if player.weapon else 'None'}")
+            print(f"\n{player.name} - Health: ({player.health_state})")
+            player.equipped_weapon()
         
         elif choice == "2":
             weapon_name = input("Enter weapon name: ").strip()

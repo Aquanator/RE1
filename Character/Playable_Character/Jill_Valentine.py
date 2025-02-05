@@ -1,11 +1,10 @@
-from ..character import Character
-from Items.Weapons import Jills_Samurai_Edge
+from Character.character import Character
+from Items.Weapons.Jills_Samurai_Edge import Jills_Samurai_Edge  # Import the weapon class
 
 class Jill_Valentine(Character):
     def __init__(self):
-        # The arguments taking in the super function are name, health, starting weapon, Special item
-        super().__init__("Jill Valentine", 100, "Fine", Jills_Samurai_Edge, [Jills_Samurai_Edge], None)
+        # Instantiate the weapon correctly
+        starting_weapon = Jills_Samurai_Edge()
 
-    # Planning on adding skills in the future
-
-    
+        # Call the parent constructor with the correct values
+        super().__init__("Jill Valentine", 100, "Fine", starting_weapon, None, None)

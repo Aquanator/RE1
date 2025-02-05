@@ -11,10 +11,12 @@ class Character:
         self.inventory = inventory
         self.special_item = special_item
         
-    
     def equip_weapon(self, weapon):
         self.weapon = weapon
-        print(f"{self.name} equipped {weapon}")
+        print(f"Weapon: {self.weapon}")
+
+    def equipped_weapon(self):
+        print(f"Weapon: {self.weapon}")
 
     def take_damage(self, damage):
         self.current_health = max(0, self.current_health - damage)
@@ -40,7 +42,7 @@ class Character:
                 print(f"{self.name} does not have a weapon equipped!")
     
     def heal(self, amount):
-        self.current_health = max(100, self.current_health + amount)
+        self.current_health = min(100, self.current_health + amount)
 
         match self.current_health:
             case hp if hp >= 60 and hp <= 100:
@@ -52,4 +54,4 @@ class Character:
             case hp if hp >= 1 and hp <= 14:
                 self.health_state = "Danger"
             
-        return print(f"{self.name}: {self.health_state}")
+        print(f"{self.name}: {self.health_state}")
