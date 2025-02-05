@@ -1,4 +1,8 @@
 from Character.Playable_Character.Jill_Valentine import Jill_Valentine
+# This is fine for now as I just want to build a demo of the game.
+# Eventually need to fix this as I want to just call the folder itself, so that
+# I don't have to write a whole bunch of imports cause that sounds terribly lol.
+
 from Character.character import Character
 import time
 
